@@ -24,6 +24,7 @@ jobs:
         cd SiteContagem
         docker build . --file Dockerfile --tag ${{ secrets.DOCKER_USERNAME }}/anp:$GITHUB_RUN_NUMBER
 
-    - name: Push the Docker image to DockerHub
+    - name: Push the Docker image with tag e Latest to DockerHub
       run: |
-          docker push --tag ${{ secrets.DOCKER_USERNAME }}/anp:$GITHUB_RUN_NUMBER
+          docker tag ${{ secrets.DOCKER_USERNAME }}/anp:$GITHUB_RUN_NUMBER ${{ secrets.DOCKER_USERNAME }}/anp:latest
+          docker push ${{ secrets.DOCKER_USERNAME }}/anp
