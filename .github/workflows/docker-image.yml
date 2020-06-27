@@ -23,5 +23,5 @@ jobs:
     
     - name: Build the Docker image
       run: |
-      cd SiteContagem
-      docker build . --file Dockerfile --tag ${{ secrets.DOCKER_USERNAME }}/${{ secrets.NOME_IMAGEM }}:$GITHUB_RUN_NUMBER
+        cd SiteContagem
+        docker build . --file Dockerfile --tag ${{ secrets.DOCKER_USERNAME }}/${{ secrets.NOME_IMAGEM }}:$GITHUB_RUN_NUMBER
